@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff;
+}
+
+header {
+  background-color: #047e85;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  
+}
+
+.main-nav {
+  height: 90px;
+
+}
+
+.logo {
+  color: white;
+  line-height: 90px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 30px;
+  font-family: "AstroSpace", sans-serif;
+}
+
+.navlinks {
+  list-style: none;
+  float: right;
+  line-height: 90px;
+  margin: 0;
+  padding: 0;
+}
+
+.navlinks li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.navlinks li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: all 0.3s linear 0s;
+}
+
+.navlinks li a:hover {
+  color: #7ebcb9;
+  padding-bottom: 7px;
+  border-bottom: 2px solid #7ebcb9;
+}
+
+li a.contact {
+  background-color:  #141b25;;
+  padding: 9px 20px;
+  border-radius: 50px;
+  transition: all 0.3s linear 0s;
+}
+
+li a.contact:hover {
+  background-color: #047e85;
+  color: white;
+  border-bottom: none;
+}
+
+.menu-btn {
+  color: white;
+  font-size: 25px;
+  float: right;
+  line-height: 90px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#isChecked {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .navlinks {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: #222831;
+    right: -100%;
+    transition: all 0.5s;
+  }
+
+  .navlinks li {
+    display: block;
+  }
+
+  .navlinks li a {
+    font-size: 20px;
+  }
+
+  .navlinks li a:hover {
+    border-bottom: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+
+  #isChecked:checked ~ .navlinks {
+    right: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .logo {
+    margin-left: 15px;
+    font-size: 25px;
+  }
+
+  .menu-btn {
+    margin-right: 15px;
+    font-size: 25px;
+  }
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #047e85;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #047e85;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+.contact-form .back {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #ff6600;
+}
+
+/* Contact Info Section */
+.contact-info {
+  
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+.contact-info{
+        background-color: rgb(202, 202, 202);
+      }
+
+.contact-info .info p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #ff6600;
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ff6600;
+}
+
+/* Footer */
+footer {
+    background-color: #163536;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form, .contact-info {
+        padding: 15px;
+    }
+
+    .contact-form button {
+        width: auto;
+    }
+}
+footer {
+    background-color: #163536;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+      <header>
+      <nav class="main-nav">
+        <input type="checkbox" id="isChecked" />
+        <label for="isChecked" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <a href="index.html" class="logo">Fishfocused.rw</a>
+        <ul class="navlinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="tutorials.html">Tutorials</a></li>
+          <li><a href="Types.html">Types of Fishs</a></li>
+          <li><a href="contact.html" class="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <main>
+        <section class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="#">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+                <br>
+                <br>
+                <br>
+                
+            </form>
+            <a href="index.html"><button  class="back">Go back</button></a>
+        </section>
+        </main>
+
+    <!-- Footer Section -->
+  <section class="contact-info">
+    <h2>Contact Information</h2>
+    <div class="info">
+        <p><i class="fas fa-phone-alt" style="color: rgb(44, 132, 167);"></i> Call Us: (+1) 978-210-1055</p>
+        <p><i class="fas fa-envelope" style="color: rgb(44, 132, 167);;"></i> Email: info@stempower.org</p>
+    </div>
+
+
+
+    <h2>Follow Us</h2>
+    <div class="social-media">
+        <a href="https://www.facebook.com/profile.php?id=61554509213633" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f" style="color: rgb(44, 132, 167);"></i>
+        </a>
+        <a href="https://x.com/STEMpowerRwanda" target="_blank" class="social-icon">
+            <i class="fab fa-twitter " style="color: rgb(44, 132, 167);"></i>
+        </a>
+        <a href="https://www.instagram.com/stempowerrwanda/?__pwa=1#" target="_blank" class="social-icon">
+            <i class="fab fa-instagram" style="color: rgb(44, 132, 167);"></i>
+        </a>
+    </div>
+</section>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<br>
+
+
+<footer>
+    <p>&copy; 2024 STEMpower Rwanda. All rights reserved.</p>
+  </footer>
+</body>
+</html>
